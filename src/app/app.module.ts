@@ -4,13 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RodapeComponent } from './rodape/rodape.component';
-
+import { ContatoComponent } from './contato/contato.component';
 import { SobreComponent } from './sobre/sobre.component';
 @NgModule({
   declarations: [
     AppComponent,
-    RodapeComponent
-    SobreComponent
+    RodapeComponent,
+    SobreComponent,
+    ContatoComponent,
   ],
   imports: [
     BrowserModule,
