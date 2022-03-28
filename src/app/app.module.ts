@@ -12,7 +12,7 @@ import { SobreComponent } from './sobre/sobre.component';
     RodapeComponent,
     SobreComponent,
     ContatoComponent,
-      ],
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule
