@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { UserCredentialDTO } from '../model/UserCredentialDTO';
 import { UserLoginDTO } from '../model/UserLoginDTO';
 import { AuthService } from '../service/auth.service';
 
@@ -12,6 +13,7 @@ import { AuthService } from '../service/auth.service';
 export class LoginComponent implements OnInit {
 
   userLogin: UserLoginDTO = new UserLoginDTO()
+  user : UserCredentialDTO = new UserCredentialDTO()
 
   constructor(
 
@@ -19,26 +21,14 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) { }
 
-   ngOnInit() {
+  ngOnInit() {
   window.scroll(0,0)
   }
-  
-//   entrar() {
-//     this.auth.entrar(this.userLogin).subscribe({
-//       next: (resp: UserLogin)=>{
-//       this.userLogin = resp
-//       this.userLogin.foto
-//       environment.token = this.userLogin.token
-//       environment.nome  = this.userLogin.nome
-//       environment.foto = this.userLogin.foto
-//       environment.id  = this.userLogin.id
-//       this.router.navigate(['/inicio'])
-//     },
-//     error: erro => {
-//       if(erro.status == 500){
-//         alert('Usuário ou senha estão incorretos!')
-//       }
-//     },
-//   });
-// }
+
+  entrar() {
+    this.auth.entrar(this.userLogin).subscribe((resp: UserCredentialDTO) => {
+      this.user = resp;
+      alert('Logado com sucesso!')
+    })
+}
 }
