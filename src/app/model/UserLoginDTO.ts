@@ -1,7 +1,7 @@
 export class UserLoginDTO {
-    
-    public usuario: string
+
+    public email: string
     public senha: string
-    
+
 
 }
