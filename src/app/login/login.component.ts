@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(
 
     private auth: AuthService,
-    private router: Router
+    private route: Router
   ) { }
 
   ngOnInit() {
@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
     this.auth.entrar(this.userLogin).subscribe((resp: UserCredentialDTO) => {
       this.user = resp;
       alert('Logado com sucesso!')
+      this.route.navigate(['/menu'])
     })
 }
 }
