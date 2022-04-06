@@ -11,6 +11,8 @@ import { MenuComponent } from './menu/menu.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { ProdutoComponent } from './produto/produto.component';
+import { AssinantesComponent } from './assinantes/assinantes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     ContatoComponent,
     MenuComponent,
     CadastroComponent,
-    LoginComponent
+    LoginComponent,
+    ProdutoComponent,
+    AssinantesComponent
   ],
   imports: [
     BrowserModule,

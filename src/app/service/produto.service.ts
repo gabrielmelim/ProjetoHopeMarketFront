@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 
 @Injectable({
@@ -8,30 +9,34 @@ import { Produto } from '../model/Produto';
 })
 export class ProdutoService {
 
-  constructor(private http: HttpClient ) {  }
+  constructor(private http: HttpClient ) { }
+
+  token = {
+    headers: new HttpHeaders().set('Authorization', environment.token)
+  }
 
   getAllProduto(): Observable<Produto[]>{
-    return this.http.get<Produto[]>('https://projetohopemarket.herokuapp.com/produtos')
+    return this.http.get<Produto[]>('https://projetohopemarket.herokuapp.com/produtos', this.token)
   }
 
   getProdutoByCategoria(categoria: string): Observable<Produto>{
-    return this.http.get<Produto>(`https://projetohopemarket.herokuapp.com/produtos/categoria/${categoria}`)
+    return this.http.get<Produto>(`https://projetohopemarket.herokuapp.com/produtos/categoria/${categoria}`, this.token)
   }
 
   getProdutoById(id:number): Observable<Produto>{
-    return this.http.get<Produto>(`https://projetohopemarket.herokuapp.com/produtos/${id}`)
+    return this.http.get<Produto>(`https://projetohopemarket.herokuapp.com/produtos/${id}`, this.token)
   }
 
   postProduto(produto: Produto): Observable<Produto>{
-    return this.http.post<Produto>('https://projetohopemarket.herokuapp.com/produtos', produto)
+    return this.http.post<Produto>('https://projetohopemarket.herokuapp.com/produtos', produto, this.token)
   }
 
   putProduto(produto: Produto): Observable<Produto>{
-    return this.http.put<Produto>('https://projetohopemarket.herokuapp.com/produtos', produto)
+    return this.http.put<Produto>('https://projetohopemarket.herokuapp.com/produtos', produto, this.token)
   }
 
   deleteProduto(id:number): Observable<Produto>{
-    return this.http.delete<Produto>(`https://projetohopemarket.herokuapp.com/produtos/${id}`)
+    return this.http.delete<Produto>(`https://projetohopemarket.herokuapp.com/produtos/${id}`, this.token)
   }
 
 }
