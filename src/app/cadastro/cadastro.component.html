@@ -37,18 +37,17 @@
                     <div class="form-group">
                         <label for="confirmSenha">Confirmar senha</label>
                         <input class="form-control" type="password" name="confirmSenha" id="confirmSenha"
-                            placeholder="confirmSenha" [(ngModel)]="userRegister.senha">
+                            placeholder="Confirmar Senha" [(ngModel)]="userRegister.senha">
                     </div>
 
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <label for="tipo">Tipo de usuário</label>
-                        <select class="form-control" name="tipo" id="tipo"></select>
-                      <select>
-                        <option>Selecione um tipo de usuário:</option>
-                        <option value="normal">Usuario</option>
+                        <select class="form-control" name="tipo" id="tipo">
+                        <option selected disabled>Selecione um tipo de usuário:</option>
+                        <option value="normal">Cliente</option>
                         <option value="adm">Administrador</option>
                         </select>
-                    </div> -->
+                    </div>
 
                     <div class="d-flex justify-content-center mt-4">
                         <button type="submit" class="btn btn-danger mr-4" style="margin-right: 10px;"
