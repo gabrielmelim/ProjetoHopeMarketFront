@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { Produto } from '../model/Produto';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-produto',
@@ -7,9 +11,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutoComponent implements OnInit {
 
-  constructor() { }
+  produto: Produto = new Produto()
+  listaProduto: Produto []
 
-  ngOnInit(): void {
+  constructor(
+    private router: Router,
+    private produtoService: ProdutoService,
+
+  ) { }
+
+  ngOnInit() {
+    if (environment.token == '') {
+      alert('Sua sessão expirou, faça o login novamente!')
+      this.router.navigate(['/login'])
+    }
+    this.findAllProduto()
   }
 
+  findAllProduto() {
+    this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
+      this.listaProduto = resp
+
+    })
+  }
+  cadastrar() {
+    this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
+      this.produto = resp
+      alert('Produto cadastrado com sucesso!')
+      this.findAllProduto()
+      this.produto = new Produto()
+
+})
 }
+}
+
+  
+
+
+
+
