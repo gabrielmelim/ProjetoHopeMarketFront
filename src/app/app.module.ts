@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ProdutoComponent } from './produto/produto.component';
 import { AssinantesComponent } from './assinantes/assinantes.component';
+import { CadprodutoComponent } from './cadproduto/cadproduto.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AssinantesComponent } from './assinantes/assinantes.component';
     CadastroComponent,
     LoginComponent,
     ProdutoComponent,
-    AssinantesComponent
+    AssinantesComponent,
+    CadprodutoComponent
   ],
   imports: [
     BrowserModule,

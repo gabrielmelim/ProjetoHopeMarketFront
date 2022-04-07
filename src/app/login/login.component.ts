@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
     this.auth.entrar(this.userLogin).subscribe((resp: UserCredentialDTO) => {
       this.user = resp;
       environment.token = this.user.token
+      environment.nome = this.user.nome
       alert('Logado com sucesso!')
       this.route.navigate(['/produto'])
     })
