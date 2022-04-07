@@ -20,6 +20,7 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrar(){
+    // this.userRegister.tipo = 'cliente'
     this.auth.cadastrar(this.userRegister).subscribe((resp: User) => {
       this.user = resp;
       alert('Usuário cadastrado!')
