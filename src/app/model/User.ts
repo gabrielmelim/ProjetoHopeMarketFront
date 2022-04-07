@@ -3,5 +3,7 @@ export class User {
     public nome: string;
     public cpf: string;
     public senha: string;
-    public pacote: string
+    public pacote: string;
+    public tipo: string
+
 }
