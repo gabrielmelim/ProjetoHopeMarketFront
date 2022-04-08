@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Produto } from '../model/Produto';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-cadproduto',
@@ -7,9 +9,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadprodutoComponent implements OnInit {
 
-  constructor() { }
+  produto: Produto = new Produto();
+  listaProdutos: Produto[] = [];
 
-  ngOnInit(): void {
+  constructor(
+    private prod: ProdutoService
+  ) { }
+
+  ngOnInit(  ) {
+    this.prod.refreshToken()
+  }
+
+  cadProduto(){
+    console.log(this.produto)
+    this.prod.postProduto(this.produto).subscribe((resp: Produto)=> {
+      this.produto = resp;
+      alert('Produto cadastrado com sucesso!');
+      this.produto = new Produto();
+    });
+
+  }
+
+  getProdutos(){
+    this.prod.getAllProduto().subscribe((produtos: Produto[]) => {
+      this.listaProdutos = produtos;
+      this.listaProdutos.sort((a, b) => a.id - b.id)
+    })
+  }
+
+  getProdutoById(id: number){
+    this.prod.getProdutoById(id).subscribe((produto: Produto) => {
+      this.produto = produto;
+    })
   }
 
 }

@@ -9,7 +9,10 @@ export class AssinantesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
+  putPacote(){
+
+  }
 }

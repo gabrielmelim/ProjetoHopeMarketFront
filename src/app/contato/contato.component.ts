@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contato',
@@ -8,11 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class ContatoComponent implements OnInit {
 
   constructor(
+    public route : Router
 
-    
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  enviar(){
+    alert('Mensagem enviada com sucesso!')
+    this.route.navigate(['/home'])
   }
 
 }

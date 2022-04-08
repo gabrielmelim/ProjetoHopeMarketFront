@@ -36,13 +36,12 @@ export class AuthService {
   admin(){
     let ok: boolean = false;
     if(environment.tipo == 'admin'){
-      ok = true 
+      ok = true
     }
     return ok
-    
   }
 
- 
+
 
   sair(){
     this.logado
