@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Produto } from '../model/Produto';
+import { User } from '../model/User';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -11,8 +13,12 @@ export class CadprodutoComponent implements OnInit {
 
   produto: Produto = new Produto();
   listaProdutos: Produto[] = [];
+  idProduto: number;
+  user:  User = new User;
+
 
   constructor(
+    private router: Router,
     private prod: ProdutoService
   ) { }
 
@@ -42,5 +48,11 @@ export class CadprodutoComponent implements OnInit {
       this.produto = produto;
     })
   }
+
+  getAllProdutos(){
+    this.prod.getAllProduto().subscribe((resp: Produto[])=>{this.listaProdutos = resp})
+  }
+  
+
 
 }
