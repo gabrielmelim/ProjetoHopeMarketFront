@@ -30,8 +30,15 @@ export class LoginComponent implements OnInit {
       this.user = resp;
       environment.token = this.user.token
       environment.nome = this.user.nome
-      alert('Logado com sucesso!')
-      this.route.navigate(['/produto'])
+      environment.tipo = this.user.tipo
+
+      console.log(environment)
+
+      this.route.navigate(['/home'])
+    }, erro => {
+      if(erro.status == 401 || 404){
+        alert('Usuário ou senha estão incorretos, tente novamente!')
+      }
     })
 }
 }

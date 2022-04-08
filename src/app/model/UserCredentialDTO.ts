@@ -3,6 +3,6 @@ export class UserCredentialDTO {
     public nome: string;
     public email: string;
     public token: string;
-    public tipo: string
+    public tipo: string;
 
 }

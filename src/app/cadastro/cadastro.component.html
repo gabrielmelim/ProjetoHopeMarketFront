@@ -42,12 +42,12 @@
 
                         <div class="form-group">
                         <label for="tipo">Tipo de usuário</label>
-                        <select class="form-control" name="tipo" id="tipo">
+                        <select class="form-control" name="tipo" id="tipo" [(ngModel)]="userRegister.tipo">
                         <option selected disabled>Selecione um tipo de usuário:</option>
-                        <option value="normal">Cliente</option>
-                        <option value="adm">Administrador</option>
+                        <option value="padrao">Cliente</option>
+                        <option value="admin">Administrador</option>
                         </select>
-                    </div> 
+                    </div>
 
                     <div class="d-flex justify-content-center mt-4">
                         <button type="submit" class="btn btn-danger mr-4" style="margin-right: 10px;"

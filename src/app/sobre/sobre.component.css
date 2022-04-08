@@ -1,13 +1,13 @@
-#img-bg{
-background-image: url("https://imgur.com/YaxA31v.jpeg");
-
-min-height: 100vh;
-
-background-position: center;
-background-repeat: no-repeat;
-
-}
 
 .justify{
   text-align: justify;
+}
+
+
+.fmt-dev{
+  display: flex!important;
+  flex-wrap: wrap;
+  margin-right: 15px;
+  margin-left: 15px;
+  padding-left: 15px;
 }
