@@ -15,6 +15,7 @@ import { ProdutoComponent } from './produto/produto.component';
 import { AssinantesComponent } from './assinantes/assinantes.component';
 import { CadprodutoComponent } from './cadproduto/cadproduto.component';
 import { HomeComponent } from './home/home.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HomeComponent } from './home/home.component';
     AssinantesComponent,
     CadprodutoComponent,
     HomeComponent,
+    CarrinhoComponent,
   
   ],
   imports: [

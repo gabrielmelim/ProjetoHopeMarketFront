@@ -24,6 +24,9 @@ export class CadprodutoComponent implements OnInit {
 
   ngOnInit(  ) {
     this.prod.refreshToken()
+
+    this.getAllProdutos()
+
   }
 
   cadProduto(){
@@ -31,9 +34,19 @@ export class CadprodutoComponent implements OnInit {
     this.prod.postProduto(this.produto).subscribe((resp: Produto)=> {
       this.produto = resp;
       alert('Produto cadastrado com sucesso!');
+      this.getAllProdutos()
       this.produto = new Produto();
     });
 
+  }
+
+  editProduto(){
+    this.prod.putProduto(this.produto).subscribe((resp : Produto)=> {
+      this.produto = resp;
+      alert('Produto atualizado com sucesso!');
+      this.getAllProdutos()
+      this.produto = new Produto();
+    })
   }
 
   getProdutos(){
@@ -52,7 +65,14 @@ export class CadprodutoComponent implements OnInit {
   getAllProdutos(){
     this.prod.getAllProduto().subscribe((resp: Produto[])=>{this.listaProdutos = resp})
   }
-  
+
+  deleteProduto(){
+    this.prod.deleteProduto(this.produto.id).subscribe(()=> {
+      alert('Produto apagado com sucesso!')
+      this.getAllProdutos()
+      this.router.navigate(['/cadproduto'])
+    })
+  }
 
 
 }

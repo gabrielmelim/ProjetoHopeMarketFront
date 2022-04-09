@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AssinantesComponent } from './assinantes/assinantes.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CadprodutoComponent } from './cadproduto/cadproduto.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ContatoComponent } from './contato/contato.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -20,8 +21,9 @@ const routes: Routes = [
   {path: 'assinantes', component: AssinantesComponent},
   {path: 'cadproduto', component: CadprodutoComponent},
   {path: 'sobre', component: SobreComponent},
-  {path: 'home', component: HomeComponent}
-  
+  {path: 'home', component: HomeComponent},
+  {path: 'carrinho', component: CarrinhoComponent}
+
 ];
 
 @NgModule({
