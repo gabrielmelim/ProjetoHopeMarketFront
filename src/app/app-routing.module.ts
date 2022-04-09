@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'cadproduto', component: CadprodutoComponent},
   {path: 'sobre', component: SobreComponent},
   {path: 'home', component: HomeComponent}
-
+  
 ];
 
 @NgModule({
