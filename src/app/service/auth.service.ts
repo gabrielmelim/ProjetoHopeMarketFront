@@ -41,8 +41,6 @@ export class AuthService {
     return ok
   }
 
-
-
   sair(){
     this.logado
   }

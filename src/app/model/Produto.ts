@@ -6,5 +6,6 @@ public categoria: string
 public preco: number
 public estoque: number
 public foto : string
+
 }
 

@@ -1,10 +1,12 @@
 <app-menu></app-menu>
 
 <p class="d-flex mt-5 mr-5 ml-5 justify-content-center">
-  <a class="btn btn-dark" data-toggle="collapse" href="#produto" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <a class="btn btn-dark" data-toggle="collapse" href="#cadProdutos" role="button" aria-expanded="false"
+    aria-controls="collapseExample">
     Cadastrar produtos
   </a>
-  <button (click)="getAllProdutos()" class="btn btn-dark mr-5 ml-5" type="button" data-toggle="collapse" data-target="#listaProd" aria-expanded="false" aria-controls="collapseExample">
+  <button (click)="getAllProdutos()" class="btn btn-dark mr-5 ml-5" type="button" data-toggle="collapse"
+    data-target="#listaProd" aria-expanded="false" aria-controls="collapseExample">
     Lista Produtos
   </button>
 </p>
@@ -31,33 +33,15 @@
           <td>{{produto.estoque}}</td>
           <td>{{produto.foto}}</td>
           <td class="d-flex justify-content-around">
-            <button
-              class="btn btn-outline-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#editarProdutoModal"
-              (click)="getProdutoById(produto.id)">
+            <button class="btn btn-outline-primary" data-toggle="modal" data-target="#editarProdutoModal"
+              data-target="#editarProdutoModal" (click)="getProdutoById(produto.id)">
               Editar
             </button>
-            <button
-              class="btn btn-outline-danger"
-              data-bs-toggle="modal"
-              data-bs-target="#apagarProdutoModal"
+            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-target="#apagarProdutoModal"
               (click)="getProdutoById(produto.id)">
               Remover
             </button>
           </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
         </tr>
       </tbody>
     </table>
@@ -67,78 +51,102 @@
 <!--Cadastro de produto-->
 
 
-<div class="collapse" id="produto">
+<div class="collapse" id="cadProdutos">
   <div class="card card-body">
 
     <h2 class="text-center">Cadastro de produtos:</h2>
     <div class="row d-flex justify-content-center">
-    <div class="col-6">
-      <form action="" class="d-flex flex-column">
-        <div class="form-group">
-          <label for="nome">Nome:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="nome"
-            name="nome"
-            placeholder="Nome do produto"
-            [(ngModel)]="produto.nome"
-          />
-        </div>
+      <div class="col-6">
+        <form action="" class="d-flex flex-column">
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do produto"
+              [(ngModel)]="produto.nome" />
+          </div>
 
-        <div class="form-group mb-2">
-          <label for="foto">Foto:</label>
-          <input
-          type="text"
-          class="form-control"
-          id="foto"
-          name="foto"
-          placeholder="Foto do produto (url)"
-          [(ngModel)]="produto.foto">
-        </div>
+          <div class="form-group mb-2">
+            <label for="foto">Foto:</label>
+            <input type="text" class="form-control" id="foto" name="foto" placeholder="Foto do produto (url)"
+              [(ngModel)]="produto.foto">
+          </div>
 
-        <div class="form-group mb-2">
-          <label for="categoria">Categoria:</label>
-          <input type="text"
-          class="form-control"
-          id="categoria"
-          name="categoria"
-          placeholder="Categoria do produto"
-          [(ngModel)]="produto.categoria"
-          />
-        </div>
+          <div class="form-group mb-2">
+            <label for="categoria">Categoria:</label>
+            <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Categoria do produto"
+              [(ngModel)]="produto.categoria" />
+          </div>
 
-        <div class="form-group mb-2">
-          <label for="preco">Preço:</label>
-          <input type="number"
-          class="form-control"
-          id="preco"
-          name="preco"
-          placeholder="Preço do produto"
-          [(ngModel)]="produto.preco"
-          />
-        </div>
+          <div class="form-group mb-2">
+            <label for="preco">Preço:</label>
+            <input type="number" class="form-control" id="preco" name="preco" placeholder="Preço do produto"
+              [(ngModel)]="produto.preco" />
+          </div>
 
-        <div class="form-group mb-2">
-          <label for="estoque">Estoque:</label>
-          <input type="number"
-          class="form-control"
-          id="estoque"
-          name="estoque"
-          placeholder="Quantidade em estoque"
-          [(ngModel)]="produto.estoque"
-          />
-        </div>
+          <div class="form-group mb-2">
+            <label for="estoque">Estoque:</label>
+            <input type="number" class="form-control" id="estoque" name="estoque" placeholder="Quantidade em estoque"
+              [(ngModel)]="produto.estoque" />
+          </div>
 
-        <div class="d-flex justify-content-center mb-5">
-          <button
-          type="submit"
-          class="btn btn-outline-primary me-4"
-          (click)="cadProduto()">Cadastrar</button>
-        </div>
-      </form>
+          <div class="d-flex justify-content-center mb-5">
+            <button type="submit" class="btn btn-outline-primary me-4" (click)="cadProduto()">Cadastrar</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
   </div>
 </div>
 
+<!--Modal Edit Produto-->
+
+
+<!-- Modal -->
+<div class="modal fade" id="editarProdutoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Produto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do produto"
+            [(ngModel)]="produto.nome" />
+
+        </div>
+        <div class="form-group">
+          <label for="foto">Foto:</label>
+          <input type="text" class="form-control" id="foto" name="foto" placeholder="Foto do produto (url)"
+            [(ngModel)]="produto.foto">
+        </div>
+
+        <div class="form-group">
+          <label for="categoria">Categoria:</label>
+          <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Categoria do produto"
+            [(ngModel)]="produto.categoria" />
+        </div>
+
+        <div class="form-group">
+          <label for="preco">Preço:</label>
+          <input type="number" class="form-control" id="preco" name="preco" placeholder="Preço do produto"
+            [(ngModel)]="produto.preco" />
+        </div>
+
+        <div class="form-group">
+          <label for="estoque">Estoque:</label>
+          <input type="number" class="form-control" id="estoque" name="estoque" placeholder="Quantidade em estoque"
+            [(ngModel)]="produto.estoque" />
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="cadProduto()">Salvar edição</button>
+      </div>
+    </div>
+  </div>
+</div>

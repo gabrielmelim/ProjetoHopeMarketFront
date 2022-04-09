@@ -28,7 +28,8 @@ import { HomeComponent } from './home/home.component';
     ProdutoComponent,
     AssinantesComponent,
     CadprodutoComponent,
-    HomeComponent
+    HomeComponent,
+  
   ],
   imports: [
     BrowserModule,
