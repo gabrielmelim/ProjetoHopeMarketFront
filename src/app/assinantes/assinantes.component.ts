@@ -11,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 export class AssinantesComponent implements OnInit {
   user: User = new User()
 
-  constructor( 
+  constructor(
     private pacoteAuth: AuthService
   ) { }
 
@@ -27,32 +27,32 @@ export class AssinantesComponent implements OnInit {
   }
 
   putPacoteSilver(){
-    this.user.pacote = 'SILVER' 
+    this.user.pacote = 'SILVER'
 
     console.log(this.user)
     this.pacoteAuth.pacote(this.user).subscribe((resp: User) => {
       this.user = resp;
-      alert('pacote alterado')
+      alert('Pacote Silver incluído com sucesso!')
     })
   }
 
   putPacoteGold(){
-    this.user.pacote = 'GOLD' 
+    this.user.pacote = 'GOLD'
 
     console.log(this.user)
     this.pacoteAuth.pacote(this.user).subscribe((resp: User) => {
       this.user = resp;
-      alert('pacote alterado')
+      alert('Pacote Gold incluído com sucesso!')
     })
   }
 
   putPacotePlatinum(){
-    this.user.pacote = 'PLANTIUM' 
+    this.user.pacote = 'PLANTIUM'
 
     console.log(this.user)
     this.pacoteAuth.pacote(this.user).subscribe((resp: User) => {
       this.user = resp;
-      alert('pacote alterado')
+      alert('Pacote Platinum incluído com sucesso!')
     })
   }
 }

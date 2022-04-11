@@ -14,6 +14,12 @@ export class ProdutoComponent implements OnInit {
   produto: Produto = new Produto()
   listaProduto: Produto []
 
+  nome = environment.nome
+  categoria = environment.categoria
+  preco = environment.preco
+  estoque = environment.estoque
+  foto = environment.foto
+
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
@@ -21,8 +27,10 @@ export class ProdutoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    this.findAllProduto
 }
-  
+
 
   findAllProduto() {
     this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
