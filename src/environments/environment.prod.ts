@@ -4,5 +4,6 @@ export const environment = {
   email:'',
   token:'',
   tipo: '',
-  id: 0
+  id: 0,
+  pacote:''
 };
