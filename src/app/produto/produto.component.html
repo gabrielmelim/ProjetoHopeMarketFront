@@ -1,38 +1,24 @@
 <app-menu></app-menu>
-<div class="row mt-5 mb-5">
-  <div class="col-md-2">
 
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
+<h1 class="text-center mt-4 mb-2">Produtos</h1>
+<div class="row mt-5 mb-5" >
 
-  </div>
-
-  <div class="col-md-10 d-flex flex-column justify-content-center">
-    <div class="card mr-5 mb-4" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="col-md-10 d-flex justify-content-center">
+    <div class="card mr-5 mb-4" style="width: 18rem;" >
+      <img [src]="produto.foto" class="card-img-top" alt="...">
+      <div class="card-body" *ngFor="let produto of listaProduto">
+        <h5 class="card-title">{{produto.nome}}</h5>
+        <p class="card-text">Categoria: {{produto.categoria}}</p>
+        <p class="card-text">Preço: {{produto.preco}}</p>
+        <a class="btn btn-outline-success">Comprar</a>
       </div>
     </div>
     <div class="card mr-5 mb-4" style="width: 18rem;">
       <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-text">.</p>
+        <p class="card-text">Preço: </p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>

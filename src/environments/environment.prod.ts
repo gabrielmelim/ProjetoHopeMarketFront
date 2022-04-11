@@ -5,5 +5,9 @@ export const environment = {
   token:'',
   tipo: '',
   id: 0,
-  pacote:''
+  pacote:'',
+  categoria: '',
+  preco:'',
+  estoque:'',
+  foto:''
 };
