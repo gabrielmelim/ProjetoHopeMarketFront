@@ -16,7 +16,6 @@ export class CarrinhoService {
 
   adicionar(produto: Produto) {
     this.produtos.push(produto)
-    this.totalItems = this.produtos.length
   }
 
   listar() {

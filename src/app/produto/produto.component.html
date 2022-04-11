@@ -3,38 +3,20 @@
 <h1 class="text-center mt-4 mb-2">Produtos</h1>
 <div class="row mt-5 mb-5" >
 
-  <div class="col-md-10 d-flex justify-content-center">
-    <div class="card mr-5 mb-4" style="width: 18rem;" >
-      <img [src]="produto.foto" class="card-img-top" alt="...">
-      <div class="card-body" *ngFor="let produto of listaProduto">
+  <div class="col-md-10 d-flex justify-content-center flex-wrap">
+    <div class="card mr-5 mb-4 col-md-4" *ngFor="let produto of listaProduto" >
+      <img [src]="produto.foto" class="card-img-top" width="100px" alt="...">
+      <div class="card-body" >
         <h5 class="card-title">{{produto.nome}}</h5>
         <p class="card-text">Categoria: {{produto.categoria}}</p>
-        <p class="card-text">Preço: {{produto.preco}}</p>
-        <a class="btn btn-outline-success">Comprar</a>
+        <p class="card-text">Preço: {{produto.preco | currency: "BRL" }}</p>
+        <a class="btn btn-outline-success" (click)="getProdById(produto.id)">Comprar</a>
       </div>
     </div>
-    <div class="card mr-5 mb-4" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">.</p>
-        <p class="card-text">Preço: </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
     </div>
-    <div class="card mr-5 mb-4" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
 
   </div>
 
-</div>
 
 
 <app-rodape></app-rodape>
