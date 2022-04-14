@@ -22,7 +22,7 @@ export class ProdutoService {
   }
 
   getAllProduto(): Observable<Produto[]>{
-    return this.http.get<Produto[]>('https://projetohopemarket.herokuapp.com/produtos', this.token)
+    return this.http.get<Produto[]>('https://projetohopemarket.herokuapp.com/produtos')
   }
 
   getProdutoByCategoria(categoria: string): Observable<Produto>{

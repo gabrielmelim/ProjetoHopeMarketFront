@@ -56,8 +56,9 @@ export class ProdutoComponent implements OnInit {
     if(this.auth.logado() == true) {
       this.produtoService.getProdutoById(id).subscribe((resp: Produto)=> {
         this.produto = resp
-        alert('Produto adicionado ao carrinho')
         this.addProduto()
+        alert('Produto adicionado ao carrinho')
+        this.router.navigate(['/carrinho'])
       })
     } else {
       alert('Entre na sua conta ou cadastre-se para realizar a compra.')

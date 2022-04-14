@@ -3,18 +3,19 @@
 <div class="container-fluid mb-5">
   <div class="container">
     <div class="row">
-      <h2 class="mt-3">Minhas Compras</h2>
+      <h2 class="mt-4">Minhas Compras</h2>
     </div>
       <div class="row d-flex align-items-center justify-content-between">
         <div class="col-7">
           <div class="row border rounded border-dark p-0 mb-3" *ngFor="let item of listaCompras" >
             <div class="col-3 p-0 m-0">
-
+              <img [src]="item.foto" class="fotoProd rounded" alt="">
             </div>
             <div class="col-6 d-flex flex-column justify-content-center">
               <div class="row">
-                <h5 class="">{{item.nome}}</h5>
-                <p>Categoria: {{item.categoria}}</p>
+                <h5 class="text-center">{{item.nome}}</h5>
+                <p>Categoria: {{item.categoria}} </p>
+                <p></p>
                 <p>Quantidade em estoque: {{item.estoque}}</p>
               </div>
             </div>
@@ -29,7 +30,7 @@
           <div class="row">
             <div class="col-12">
               <div class="row d-flex justify-content-center align-items-center">
-                <h5 class="text-center">Total: {{total() | currency: "BRL"}}</h5>
+                <h5 class="text-center">Total: {{total() | currency: "BRL"}} </h5>
                 <p class="text-center">em até 12 parcelas de: {{parcela() | currency: "BRL" }}</p>
               </div>
             </div>

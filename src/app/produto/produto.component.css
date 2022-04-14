@@ -1,0 +1,11 @@
+.imagemCard{
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+}
+
+.itemsconfig{
+  margin-top: auto;
+}
