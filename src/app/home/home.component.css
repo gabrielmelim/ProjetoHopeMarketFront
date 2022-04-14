@@ -1,0 +1,14 @@
+.imgCarousel{
+  width: 100vw;
+  height: 70vh;
+  object-fit: cover;
+}
+
+.imagemCard{
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
