@@ -29,7 +29,9 @@
 <div class="row mt-5 mb-5 d-flex justify-content-center">
   <div class="col-md-10 d-flex justify-content-center flex-wrap">
     <div class="card mr-5 mb-4 col-md-3" *ngFor="let item of listaFiltrada">
-      <img [src]="item.foto" class="imagemCard" alt="">
+      <div class="d-flex justify-content-center">
+      <img [src]="item.foto" class="imagemCard " alt="">
+      </div>
       <div class="card-body">
         <h5 class="card-title text-center">{{item.nome}}</h5>
         <p class="card-text text-center">Categoria: {{item.categoria}}</p>
@@ -43,10 +45,9 @@
 
 <div class="row d-flex justify-content-center align-items-center mb-5">
   <div class="col-md-6">
-    <p class="text center ml-4 font-weight-bold font-italic">Querido cliente, nossa dedicação e empenho para fazer um trabalho cada vez melhor tem um motivo : FAZER VOCÊ FELIZ</p>
-    <p class="d-flex justify-content-center">😉</p>
+    <p class="text-center font-weight-bold fs-30">Querido cliente, nossa dedicação e empenho para fazer um trabalho cada vez melhor tem um motivo : FAZER VOCÊ FELIZ 😀 </p>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-12 d-flex justify-content-center">
     <img src="https://i.imgur.com/GlWtD9C.jpg" class="ml-4" width="600px" alt="">
   </div>
 </div>

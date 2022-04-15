@@ -5,7 +5,9 @@
 
   <div class="col-md-10 d-flex justify-content-center flex-wrap">
     <div class="card mr-5 mb-4 col-md-3" *ngFor="let produto of listaProduto" >
+      <div class="d-flex justify-content-center">
       <img [src]="produto.foto" class="imagemCard"  alt="...">
+      </div>
       <div class="card-body d-flex flex-column" >
         <h5 class="card-title text-center">{{produto.nome}}</h5>
         <p class="card-text text-center">Categoria: {{produto.categoria}}</p>

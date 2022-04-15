@@ -1,9 +1,8 @@
 .imagemCard{
   width: 150px;
-  height: auto;
+  height: 150px;
   object-fit: contain;
   display: flex;
-  align-items: center;
 }
 
 .itemsconfig{
