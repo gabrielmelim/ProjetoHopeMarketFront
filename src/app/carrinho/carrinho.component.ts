@@ -14,7 +14,9 @@ import { ProdutoService } from '../service/produto.service';
 export class CarrinhoComponent implements OnInit {
   listaCompras = this.carrinho.listar()
   comprados = this.carrinho.listar()
-  user : User = new User
+  user : User = new User()
+  valorTotal: number
+  precoDesc: number = 0
 
   constructor(
     private carrinho : CarrinhoService,
@@ -24,28 +26,35 @@ export class CarrinhoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.auth.refreshToken()
+    this.getUser()
+    this.total()
+  }
 
-    environment.id
+  getUser(){
+    this.auth.usuarioId(environment.id).subscribe((resp: User) => {
+      this.user = resp
+      console.log(this.user)
+
+      if(this.user.pacote == 'SILVER'){
+        this.precoDesc = (this.valorTotal - (this.valorTotal * 0.05))
+        console.log(this.precoDesc)
+      } else if (this.user.pacote == 'GOLD'){
+        this.precoDesc = (this.valorTotal - this.valorTotal * 0.10)
+        console.log(this.precoDesc)
+      } else if (this.user.pacote == 'PLANTIUM'){
+        this.precoDesc = (this.valorTotal - this.valorTotal * 0.15)
+        console.log(this.precoDesc)
+      }
+    })
   }
 
   total(){
-    return this.comprados.map((item)=> item.preco).reduce((a,b)=> a + b, 0);
-
-  }
-
-  desconto(){
-    if (this.user.pacote == 'SILVER'){
-      this.total()*0,15
-    } else if (this.user.pacote == 'GOLD'){
-      this.total()*0,15
-    } else if (this.user.pacote == 'PLANTIUM'){
-      this.total()*0,15
-    }
-
+    this.valorTotal = this.comprados.map((item) => item.preco).reduce((a,b)=> a + b, 0);
   }
 
   parcela(){
-    return this.total()/12
+    return this.valorTotal/12
   }
 
   confirmar(){
