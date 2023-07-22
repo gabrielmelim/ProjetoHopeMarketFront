@@ -27,20 +27,20 @@ export class AuthService {
   }
 
   usuarioId(id: number): Observable<User>{
-    return this.http.get<User>(`https://projetohopemarket.herokuapp.com/api/usuario/${id}`, this.token)
+    return this.http.get<User>(`https://projetohopemarket-production.up.railway.app/api/usuario${id}`, this.token)
   }
 
   entrar(userLogin: UserLoginDTO): Observable<UserCredentialDTO> {
-    return this.http.put<UserCredentialDTO>('https://projetohopemarket.herokuapp.com/api/usuario/auth', userLogin)
+    return this.http.put<UserCredentialDTO>('https://projetohopemarket-production.up.railway.app/api/usuario/auth', userLogin)
   }
 
   cadastrar(user: UserRegisterDTO): Observable<User> {
-    return this.http.post<User>('https://projetohopemarket.herokuapp.com/api/usuario/cadastrar', user)
+    return this.http.post<User>('https://projetohopemarket-production.up.railway.app/api/usuario/cadastrar', user)
 
   }
 
   pacote(user: User): Observable<User> {
-    return this.http.put<User>(`https://projetohopemarket.herokuapp.com/api/usuario`, user, this.token)
+    return this.http.put<User>(`https://projetohopemarket-production.up.railway.app/api/usuario`, user, this.token)
 
   }
 
